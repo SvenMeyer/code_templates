@@ -21,8 +21,8 @@ def get_env():
     else:
         s =  ""
         
-    s = s +  ' *** ' + os.environ['CONDA_DEFAULT_ENV']
-    
+#   s = s +  ' *** ' + os.environ['CONDA_DEFAULT_ENV']
+'''
     with subprocess.Popen(["conda", "env" , "list"], stdout=subprocess.PIPE, stderr=subprocess.PIPE) as process:
         output, error = process.communicate()
         lines = output.decode('utf-8').splitlines()
@@ -32,7 +32,7 @@ def get_env():
         s =  s +  ' *** ' + l.split()[0]
     
     return s
-
+'''
 print("ENVIRONMENT: ", end='')
 print(get_env())
 print("tensorflow.__version__ = ", tf.__version__)
